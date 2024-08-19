@@ -1,0 +1,149 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header{
+    h1{
+        padding-top: 15px;
+        color: brown;
+        background-color: rgba(73, 73, 226, 0.829);
+        text-align: center;
+        font-size: 4em;
+        text-shadow: 1px 2px 3px black;
+    }
+}
+
+main{
+    background-color: rgba(73, 73, 226, 0.829);
+    height: 100vh;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+        .modal{
+            content:  url(../img/modal.png);
+            width: 240px;
+            height: 240px;
+            box-shadow: 0 0 15px black;
+            border-radius: 15px;
+        }
+        .centralizar{
+
+            .raio{
+                width: 25%;
+                float: left;
+                padding: 20px;
+                text-align: center;
+                transform: translateZ(40px);
+                /* display: block; */
+                cursor: pointer;
+            }
+            #botao{
+                position: absolute;
+                width: 38px;
+                right: 55px;
+                top: -80px;
+                border-radius: 50%;
+                cursor: pointer;
+            }    
+            #botao2{
+                position: absolute;
+                width: 38px;
+                right: 230px;
+                top: 0px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            #botao3{
+                position: absolute;
+                width: 38px;
+                right: 55px;
+                top: 70px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            #botao4{
+                position: absolute;
+                width: 38px;
+                right: 230px;
+                top: 70px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            #botao5{
+                position: absolute;
+                width: 38px;
+                right: 145px;
+                top: 70px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            #botao6{
+                position: absolute;
+                width: 38px;
+                right: 230px;
+                top: -80px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            #botao7{
+                position: absolute;
+                width: 38px;
+                right: 55px;
+                top: 0px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            #botao8{
+                position: absolute;
+                width: 38px;
+                right: 145px;
+                top: -80px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+        }  
+        
+       
+    } 
+    button {
+        background-color: black;
+        color: white;
+        padding: 15px;
+        border-radius: 15px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    .jogar{
+        display: flex;
+        justify-content: center;
+        padding-top: 25px;
+
+        #texto{
+            margin-left: 15px;
+            width: 150px; 
+            height: 40px; 
+            color: black; 
+            font-size: 15px; 
+            font-style: oblique;
+        }
+    }        
+}
+
+@keyframes piscaPisca {
+    0%{background-color: blue; }
+    10% {background-color: blue;}
+    25% {background-color: red;}
+    35%{background-color: red;}
+    45%{background-color: blue; }
+    55% {background-color: blue;}
+    65% {background-color: red;}
+    75%{background-color: red;}
+    85%{background-color: blue; }
+    95% {background-color: blue;}
+    100% {background-color: red;}
+}
