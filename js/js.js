@@ -167,33 +167,67 @@ function Parar(){
 }
 
 
+let clicada = false;
+let clicada2 = false;
+
 function bonus(imagem){
-  
+
   if(imagem.id == "botao" && estilo.animationName !== "none"){
-    pontos++;
+    if (clicada !== true) {
+        pontos++;
+        clicada = true;
+    }
+    
   }else if(imagem.id == "botao2" && estilo2.animationName !== "none"){
-    pontos++;
+    if (clicada2 !== true) {
+      pontos++;
+      clicada2 = true;
+    }
+    clicada = false;
   }
   else if(imagem.id == "botao3" && estilo3.animationName !== "none"){
-    pontos++;
+    if (clicada !== true) {
+      pontos++;
+      clicada = true;
+    }
+    clicada2 = false;
   }
   else if(imagem.id == "botao4" && estilo4.animationName !== "none"){
-    pontos++;
+    if (clicada2 !== true) {
+      pontos++;
+      clicada2 = true;
+    }
+    clicada = false;
   }
   else if(imagem.id == "botao5" && estilo5.animationName !== "none"){
-    pontos++;
+    if (clicada !== true) {
+      pontos++;
+      clicada = true;
+    }
+    clicada2 = false;
   }
   else if(imagem.id == "botao6" && estilo6.animationName !== "none"){
-    pontos++;
+    if (clicada2 !== true) {
+      pontos++;
+      clicada2 = true;
+    }
+    clicada = false;
   }
   else if(imagem.id == "botao7" && estilo7.animationName !== "none"){
-    pontos++;
+    if (clicada !== true) {
+      pontos++;
+      clicada = true;
+    }
+    clicada2 = false;
   }
   else if(imagem.id == "botao8" && estilo8.animationName !== "none"){
-    pontos++;
+    if (clicada2 !== true) {
+      pontos++;
+      clicada2 = true;
+    }
+    clicada = false;
   }
   
-
   let textos = document.getElementById("texto");
   textos.value = pontos;
 }
