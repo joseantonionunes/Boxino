@@ -38,6 +38,8 @@ let textos = document.getElementById("texto");
 let pontos = 0;
 let cont = 0;
 let para = false;
+let clicada = false;
+let clicada2 = false;
 
 // Refere-se a os estilos de cada img de raio
 let estilo = window.getComputedStyle(botao);
@@ -100,6 +102,15 @@ function reinicarTime(){
   chamarTime = [];
 }
 
+function reiniciarBonus(){
+  // pontos 
+  textos.value = 0;
+  pontos = 0;
+  // para permitir apenas um click 
+  clicada = false;
+  clicada2 = false;
+}
+
 function validar(){
 
   if(cont == 1){
@@ -107,8 +118,7 @@ function validar(){
     playAudio();
   }else {
     Parar();
-    textos.value = 0;
-    pontos = 0;
+    reiniciarBonus();
     reinicarTime();
 
     setTimeout(function(){
@@ -261,8 +271,7 @@ function Parar(){
 }
 
 
-let clicada = false;
-let clicada2 = false;
+
 
 function bonus(imagem){
 
