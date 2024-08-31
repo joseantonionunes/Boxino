@@ -162,35 +162,35 @@ function fase1(){
 function fase2(){
 
   timeouts.push(setTimeout(function() {
-    botao.style.animation = "piscaPisca 5s infinite";
+    botao3.style.animation = "piscaPisca 5s infinite";
   }, 1000));
   timeouts.push(setTimeout(function() {
-    botao2.style.animation = "piscaPisca 5s infinite";
-    botao.style.animation = "none";
+    botao6.style.animation = "piscaPisca 5s infinite";
+    botao3.style.animation = "none";
   }, 2000));
   timeouts.push(setTimeout(function() {
-    botao3.style.animation = "piscaPisca 5s infinite";
-    botao2.style.animation = "none";
+    botao.style.animation = "piscaPisca 5s infinite";
+    botao6.style.animation = "none";
   }, 3000));
   timeouts.push(setTimeout(function() {
     botao4.style.animation = "piscaPisca 5s infinite";
-    botao3.style.animation = "none";
+    botao.style.animation = "none";
   }, 4000));
   timeouts.push(setTimeout(function() {
-    botao5.style.animation = "piscaPisca 5s infinite";
+    botao7.style.animation = "piscaPisca 5s infinite";
     botao4.style.animation = "none";
   }, 5000));
   timeouts.push(setTimeout(function() {
-    botao6.style.animation = "piscaPisca 5s infinite";
-    botao5.style.animation = "none";
+    botao2.style.animation = "piscaPisca 5s infinite";
+    botao7.style.animation = "none";
   }, 6000));
   timeouts.push(setTimeout(function() {
-    botao7.style.animation = "piscaPisca 5s infinite";
-    botao6.style.animation = "none";
+    botao5.style.animation = "piscaPisca 5s infinite";
+    botao2.style.animation = "none";
   }, 7000));
   timeouts.push(setTimeout(function() {
     botao8.style.animation = "piscaPisca 5s infinite";
-    botao7.style.animation = "none";
+    botao5.style.animation = "none";
   }, 8000));
   timeouts.push(setTimeout(function() {
     botao8.style.animation = "none";
@@ -200,38 +200,38 @@ function fase2(){
 function fase3(){
 
   timeouts.push(setTimeout(function() {
-    botao.style.animation = "piscaPisca 5s infinite";
+    botao4.style.animation = "piscaPisca 5s infinite";
   }, 1000));
   timeouts.push(setTimeout(function() {
-    botao2.style.animation = "piscaPisca 5s infinite";
-    botao.style.animation = "none";
+    botao8.style.animation = "piscaPisca 5s infinite";
+    botao4.style.animation = "none";
   }, 1500));
   timeouts.push(setTimeout(function() {
     botao3.style.animation = "piscaPisca 5s infinite";
-    botao2.style.animation = "none";
+    botao8.style.animation = "none";
   }, 2000));
   timeouts.push(setTimeout(function() {
-    botao4.style.animation = "piscaPisca 5s infinite";
+    botao6.style.animation = "piscaPisca 5s infinite";
     botao3.style.animation = "none";
   }, 2500));
   timeouts.push(setTimeout(function() {
     botao5.style.animation = "piscaPisca 5s infinite";
-    botao4.style.animation = "none";
+    botao6.style.animation = "none";
   }, 3000));
   timeouts.push(setTimeout(function() {
-    botao6.style.animation = "piscaPisca 5s infinite";
+    botao.style.animation = "piscaPisca 5s infinite";
     botao5.style.animation = "none";
   }, 3500));
   timeouts.push(setTimeout(function() {
     botao7.style.animation = "piscaPisca 5s infinite";
-    botao6.style.animation = "none";
+    botao.style.animation = "none";
   }, 4000));
   timeouts.push(setTimeout(function() {
-    botao8.style.animation = "piscaPisca 5s infinite";
+    botao2.style.animation = "piscaPisca 5s infinite";
     botao7.style.animation = "none";
   }, 4500));
   timeouts.push(setTimeout(function() {
-    botao8.style.animation = "none";
+    botao2.style.animation = "none";
   }, 5000));
 }
 
