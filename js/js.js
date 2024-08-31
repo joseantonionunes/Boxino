@@ -7,8 +7,13 @@ function playAudio(){
   bgmusix.play();
 }
 
-function pauseAudiol(){
+function pauseAudio(){
   bgmusix.pause();
+}
+
+function reiniciarAudio(){
+  bgmusix.currentTime = 0;
+  playAudio();
 }
 
 // Refere-se a div que tem as imagens dentro
@@ -26,11 +31,12 @@ var botao8 = document.getElementById("botao8");
 
 // Lista que tem os setTimeout
 let timeouts = [];
+let chamarTime = [];
 // Refere-se a o input
 let textos = document.getElementById("texto");
 // variaveis para fazer as gambiarra
 let pontos = 0;
-let teste = 0;
+let cont = 0;
 let para = false;
 
 // Refere-se a os estilos de cada img de raio
@@ -45,7 +51,7 @@ let estilo8 = window.getComputedStyle(botao8);
 
 function Jogar(){
   
-  teste++;
+  cont++;
   
   validar();
 
@@ -59,44 +65,55 @@ function Jogar(){
 
 function chamarFase2(){
 
-  setTimeout(function() {
+  chamarTime.push(setTimeout(function() {
     if(para != true){
       alert("você fez " + pontos + " Pontos, Ir para Fase 2");
       fase2();
     }
-  },14000)
+  },15000))
 }
 
 function chamarFase3(){
-  setTimeout(function(){
+  chamarTime.push(setTimeout(function(){
     if(para != true){
       alert("você fez " + pontos + " Pontos, Ir para Fase 3");
       fase3();
     }
-  },22000)
+  },26500))
 }
 
 function chamarFim(){
-  setTimeout(function(){
+  chamarTime.push(setTimeout(function(){
     if(para == false){
       alert("você fez " + pontos + " Pontos, Acabou");
-      pauseAudiol();
+      pauseAudio();
     }
-  },31000)
+  },33500))
+}
+
+function reinicarTime(){
+
+  chamarTime.forEach(function(chamarTime) {
+    clearTimeout(chamarTime);
+  });
+
+  chamarTime = [];
 }
 
 function validar(){
 
-  if(teste == 1){
+  if(cont == 1){
     fase1();
     playAudio();
   }else {
     Parar();
     textos.value = 0;
+    pontos = 0;
+    reinicarTime();
 
     setTimeout(function(){
       fase1();
-      playAudio();
+      reiniciarAudio();
       para = false;
     },1000)
     
@@ -220,8 +237,7 @@ function fase3(){
 
 function Parar(){
 
-  // teste++;
-  pauseAudiol();
+  pauseAudio();
    // Percorrer o array e cancelar cada timeout
    for (let i = 0; i < timeouts.length; i++) {
     clearTimeout(timeouts[i]); 
@@ -250,56 +266,56 @@ let clicada2 = false;
 
 function bonus(imagem){
 
-  if(imagem.id == "botao" && estilo.animationName !== "none"){
-    if (clicada !== true) {
+  if(imagem.id == "botao" && estilo.animationName != "none"){
+    if (clicada != true) {
         pontos++;
         clicada = true;
     }
     
-  }else if(imagem.id == "botao2" && estilo2.animationName !== "none"){
-    if (clicada2 !== true) {
+  }else if(imagem.id == "botao2" && estilo2.animationName != "none"){
+    if (clicada2 != true) {
       pontos++;
       clicada2 = true;
     }
     clicada = false;
   }
-  else if(imagem.id == "botao3" && estilo3.animationName !== "none"){
-    if (clicada !== true) {
+  else if(imagem.id == "botao3" && estilo3.animationName != "none"){
+    if (clicada != true) {
       pontos++;
       clicada = true;
     }
     clicada2 = false;
   }
-  else if(imagem.id == "botao4" && estilo4.animationName !== "none"){
-    if (clicada2 !== true) {
+  else if(imagem.id == "botao4" && estilo4.animationName != "none"){
+    if (clicada2 != true) {
       pontos++;
       clicada2 = true;
     }
     clicada = false;
   }
-  else if(imagem.id == "botao5" && estilo5.animationName !== "none"){
-    if (clicada !== true) {
+  else if(imagem.id == "botao5" && estilo5.animationName != "none"){
+    if (clicada != true) {
       pontos++;
       clicada = true;
     }
     clicada2 = false;
   }
-  else if(imagem.id == "botao6" && estilo6.animationName !== "none"){
-    if (clicada2 !== true) {
+  else if(imagem.id == "botao6" && estilo6.animationName != "none"){
+    if (clicada2 != true) {
       pontos++;
       clicada2 = true;
     }
     clicada = false;
   }
-  else if(imagem.id == "botao7" && estilo7.animationName !== "none"){
-    if (clicada !== true) {
+  else if(imagem.id == "botao7" && estilo7.animationName != "none"){
+    if (clicada != true) {
       pontos++;
       clicada = true;
     }
     clicada2 = false;
   }
-  else if(imagem.id == "botao8" && estilo8.animationName !== "none"){
-    if (clicada2 !== true) {
+  else if(imagem.id == "botao8" && estilo8.animationName != "none"){
+    if (clicada2 != true) {
       pontos++;
       clicada2 = true;
     }
