@@ -18,6 +18,9 @@ function reiniciarAudio(){
 
 // Refere-se a div que tem as imagens dentro
 let raio = document.getElementById("raio");
+let modal = document.getElementById("modal");
+let level = document.getElementById("level");
+let btn = document.getElementById("btn");
 
 // Refere-se as img de raio 
 var botao = document.getElementById("botao");
@@ -57,31 +60,36 @@ function Jogar(){
   
   validar();
 
-  chamarFase2();
+  // chamarFase2();
   
-  chamarFase3();
+  // chamarFase3();
 
   chamarFim();
 
 }
 
 function chamarFase2(){
-
-  chamarTime.push(setTimeout(function() {
-    if(para != true){
-      alert("você fez " + pontos + " Pontos, Ir para Fase 2");
-      fase2();
-    }
-  },15000))
+  
+  voltarJogo();
+  fase2();
+  btn.onclick = chamarFase3;
+  // chamarTime.push(setTimeout(function() {
+  //   if(para != true){
+  //     alert("você fez " + pontos + " Pontos, Ir para Fase 2");
+  //     fase2();
+  //   }
+  // },15000))
 }
 
 function chamarFase3(){
-  chamarTime.push(setTimeout(function(){
-    if(para != true){
-      alert("você fez " + pontos + " Pontos, Ir para Fase 3");
-      fase3();
-    }
-  },26500))
+  voltarJogo();
+  fase3();
+  // chamarTime.push(setTimeout(function(){
+  //   if(para != true){
+  //     alert("você fez " + pontos + " Pontos, Ir para Fase 3");
+  //     fase3();
+  //   }
+  // },26500))
 }
 
 function chamarFim(){
@@ -100,6 +108,17 @@ function reinicarTime(){
   });
 
   chamarTime = [];
+}
+
+function chamarLevel(){
+  raio.style.display = "none";
+  modal.style.display = "none";
+  level.style.display = "block";
+}
+function voltarJogo(){
+  level.style.display = "none";
+  raio.style.display = "block";
+  modal.style.display = "block";
 }
 
 function reiniciarBonus(){
@@ -124,7 +143,7 @@ function validar(){
     setTimeout(function(){
       fase1();
       reiniciarAudio();
-      para = false;
+      // para = false;
     },1000)
     
   }
@@ -167,6 +186,10 @@ function fase1(){
   timeouts.push(setTimeout(function() {
     botao8.style.animation = "none";
   }, 13000));
+  timeouts.push(setTimeout(function() {
+    chamarLevel();
+  }, 13500));
+  
 }
 
 function fase2(){
@@ -205,6 +228,11 @@ function fase2(){
   timeouts.push(setTimeout(function() {
     botao8.style.animation = "none";
   }, 9000));
+  timeouts.push(setTimeout(function() {
+    raio.style.display = "none";
+    modal.style.display = "none";
+    level.style.display = "block";
+  }, 9500));
 }
 
 function fase3(){
@@ -267,7 +295,7 @@ function Parar(){
   // Limpar o array após cancelar os timeouts
   timeouts = [];
   // para a proxima fase não iniciar
-  para = true;
+  // para = true;
 }
 
 

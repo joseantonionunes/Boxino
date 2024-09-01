@@ -23,7 +23,7 @@ main{
         align-items: center;
         justify-content: center;
         padding-top: 20px;
-        .modal{
+        #modal{
             content:  url(../img/modal.png);
             width: 240px;
             height: 240px;
@@ -31,79 +31,92 @@ main{
             border-radius: 15px;
         }
         .centralizar{
-
-            .raio{
+            #raio{
                 width: 25%;
                 float: left;
                 padding: 20px;
                 text-align: center;
                 transform: translateZ(40px);
-                /* display: block; */
                 cursor: pointer;
+            
+                #botao{
+                    position: absolute;
+                    width: 38px;
+                    right: 55px;
+                    top: -80px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }    
+                #botao2{
+                    position: absolute;
+                    width: 38px;
+                    right: 230px;
+                    top: 0px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                #botao3{
+                    position: absolute;
+                    width: 38px;
+                    right: 55px;
+                    top: 70px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                #botao4{
+                    position: absolute;
+                    width: 38px;
+                    right: 230px;
+                    top: 70px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                #botao5{
+                    position: absolute;
+                    width: 38px;
+                    right: 145px;
+                    top: 70px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                #botao6{
+                    position: absolute;
+                    width: 38px;
+                    right: 230px;
+                    top: -80px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                #botao7{
+                    position: absolute;
+                    width: 38px;
+                    right: 55px;
+                    top: 0px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                #botao8{
+                    position: absolute;
+                    width: 38px;
+                    right: 145px;
+                    top: -80px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
             }
-            #botao{
-                position: absolute;
-                width: 38px;
-                right: 55px;
-                top: -80px;
-                border-radius: 50%;
-                cursor: pointer;
-            }    
-            #botao2{
-                position: absolute;
-                width: 38px;
-                right: 230px;
-                top: 0px;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-            #botao3{
-                position: absolute;
-                width: 38px;
-                right: 55px;
-                top: 70px;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-            #botao4{
-                position: absolute;
-                width: 38px;
-                right: 230px;
-                top: 70px;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-            #botao5{
-                position: absolute;
-                width: 38px;
-                right: 145px;
-                top: 70px;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-            #botao6{
-                position: absolute;
-                width: 38px;
-                right: 230px;
-                top: -80px;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-            #botao7{
-                position: absolute;
-                width: 38px;
-                right: 55px;
-                top: 0px;
-                border-radius: 50%;
-                cursor: pointer;
-            }
-            #botao8{
-                position: absolute;
-                width: 38px;
-                right: 145px;
-                top: -80px;
-                border-radius: 50%;
-                cursor: pointer;
+            #level{
+                position: relative;
+                display: none;
+                .img{
+                    max-width: 580px;
+                    max-height: 280px;
+                }
+                #btn{
+                    z-index: 1;
+                    position: absolute;
+                    top: 80%;
+                    left: 38%;
+                }
             }
         }  
         
