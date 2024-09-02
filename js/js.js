@@ -58,13 +58,6 @@ function Jogar(){
   
   cont++;
   validar();
-
-  // chamarFase2();
-  
-  // chamarFase3();
-
-  // chamarFim();
-
 }
 
 function chamarFase2(){
@@ -72,39 +65,19 @@ function chamarFase2(){
   voltarJogo();
   fase2();
   btn.onclick = chamarFase3;
-  // chamarTime.push(setTimeout(function() {
-  //   if(para != true){
-  //     alert("você fez " + pontos + " Pontos, Ir para Fase 2");
-  //     fase2();
-  //   }
-  // },15000))
 }
 
 function chamarFase3(){
   voltarJogo();
   fase3();
   btn.onclick = chamarFim;
-  
-  // chamarTime.push(setTimeout(function(){
-  //   if(para != true){
-  //     alert("você fez " + pontos + " Pontos, Ir para Fase 3");
-  //     fase3();
-  //   }
-  // },26500))
 }
 
 function chamarFim(){
 
   voltarJogo();
   pauseAudio();
-  // btn.innerText = "Começar";
   alert("você fez " + pontos + " Pontos, Acabou");
-  // chamarTime.push(setTimeout(function(){
-  //   if(para == false){
-  //     alert("você fez " + pontos + " Pontos, Acabou");
-  //     pauseAudio();
-  //   }
-  // },33500))
 }
 
 function reinicarTime(){
@@ -149,7 +122,6 @@ function validar(){
     setTimeout(function(){
       fase1();
       reiniciarAudio();
-      // para = false;
     },1000)
     
   }
@@ -301,8 +273,6 @@ function Parar(){
   
   // Limpar o array após cancelar os timeouts
   timeouts = [];
-  // para a proxima fase não iniciar
-  // para = true;
 }
 
 
