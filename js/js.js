@@ -57,14 +57,13 @@ let estilo8 = window.getComputedStyle(botao8);
 function Jogar(){
   
   cont++;
-  
   validar();
 
   // chamarFase2();
   
   // chamarFase3();
 
-  chamarFim();
+  // chamarFim();
 
 }
 
@@ -84,6 +83,8 @@ function chamarFase2(){
 function chamarFase3(){
   voltarJogo();
   fase3();
+  btn.onclick = chamarFim;
+  
   // chamarTime.push(setTimeout(function(){
   //   if(para != true){
   //     alert("você fez " + pontos + " Pontos, Ir para Fase 3");
@@ -93,12 +94,17 @@ function chamarFase3(){
 }
 
 function chamarFim(){
-  chamarTime.push(setTimeout(function(){
-    if(para == false){
-      alert("você fez " + pontos + " Pontos, Acabou");
-      pauseAudio();
-    }
-  },33500))
+
+  voltarJogo();
+  pauseAudio();
+  // btn.innerText = "Começar";
+  alert("você fez " + pontos + " Pontos, Acabou");
+  // chamarTime.push(setTimeout(function(){
+  //   if(para == false){
+  //     alert("você fez " + pontos + " Pontos, Acabou");
+  //     pauseAudio();
+  //   }
+  // },33500))
 }
 
 function reinicarTime(){
@@ -229,9 +235,7 @@ function fase2(){
     botao8.style.animation = "none";
   }, 9000));
   timeouts.push(setTimeout(function() {
-    raio.style.display = "none";
-    modal.style.display = "none";
-    level.style.display = "block";
+    chamarLevel();
   }, 9500));
 }
 
@@ -271,6 +275,9 @@ function fase3(){
   timeouts.push(setTimeout(function() {
     botao2.style.animation = "none";
   }, 5000));
+  timeouts.push(setTimeout(function() {
+    chamarLevel();
+  }, 5500));
 }
 
 function Parar(){
