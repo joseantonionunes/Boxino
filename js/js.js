@@ -34,13 +34,12 @@ var botao8 = document.getElementById("botao8");
 
 // Lista que tem os setTimeout
 let timeouts = [];
-let chamarTime = [];
 // Refere-se a o input
 let textos = document.getElementById("texto");
 // variaveis para fazer as gambiarra
 let pontos = 0;
 let cont = 0;
-let para = false;
+// let para = false;
 let clicada = false;
 let clicada2 = false;
 
@@ -80,15 +79,6 @@ function chamarFim(){
   alert("você fez " + pontos + " Pontos, Acabou");
 }
 
-function reinicarTime(){
-
-  chamarTime.forEach(function(chamarTime) {
-    clearTimeout(chamarTime);
-  });
-
-  chamarTime = [];
-}
-
 function chamarLevel(){
   raio.style.display = "none";
   modal.style.display = "none";
@@ -117,7 +107,6 @@ function validar(){
   }else {
     Parar();
     reiniciarBonus();
-    reinicarTime();
 
     setTimeout(function(){
       fase1();
