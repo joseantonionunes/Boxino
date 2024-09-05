@@ -11,13 +11,10 @@ main{
     background-image: url(../img/imgFundo.jpg);
     background-size: cover;
 
-    .proximo{
-        display: flex;
-        justify-content: center;
+    .proximo{ 
         padding-top: 290px;
-        padding-left: 720px;
-        transform: translate(0px);
-        #fase{
+        padding-left: 1090px;
+        #txtfase{
             text-align: center;
             width: 450px; 
             height: 70px; 
@@ -29,13 +26,45 @@ main{
             font-weight: 600;
             font-style: italic;
         }
+        #txtfase2{
+            display: block;
+            text-align: center;
+            width: 480px; 
+            height: 70px; 
+            font-size: 70px; 
+            border: none; 
+            outline: none; 
+            background: transparent; 
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 600;
+            font-style: italic;
+        }
     }
+
+    .jogar{
+        padding-top: 145px;
+        margin-left: 255px;
+        color: red; 
+        #texto{
+            text-align: center;
+            margin-left: 15px;
+            width: 80px; 
+            height: 50px; 
+            color: red; 
+            font-size: 65px; 
+            font-weight: 600;
+            font-style: oblique;
+            border: none; 
+            outline: none; 
+            background: transparent; 
+        }
+    }   
 
     .container{
         display: flex;
         align-items: center;
         justify-content: center ;
-        margin-top: 430px;
+        margin-top: 145px;
         margin-left: 510px;
         .centralizar{
             #raio{
@@ -123,23 +152,7 @@ main{
         border-radius: 15px;
         cursor: pointer;
         margin-left: 10px;
-    }
-
-    .jogar{
-        display: flex;
-        justify-content: left;
-        padding-top: -45px;
-        margin-left: 195px;
-        #texto{
-            text-align: center;
-            margin-left: 15px;
-            width: 60px; 
-            height: 50px; 
-            color: blue; 
-            font-size: 45px; 
-            font-style: oblique;
-        }
-    }        
+    }  
 }
 
 @keyframes piscaPisca {
