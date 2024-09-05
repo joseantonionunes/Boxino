@@ -16,12 +16,6 @@ function reiniciarAudio(){
   playAudio();
 }
 
-// Refere-se a div que tem as imagens dentro
-let raio = document.getElementById("raio");
-let modal = document.getElementById("modal");
-let level = document.getElementById("level");
-let btn = document.getElementById("btn");
-
 // Refere-se as img de raio 
 var botao = document.getElementById("botao");
 var botao2 = document.getElementById("botao2");
@@ -36,6 +30,7 @@ var botao8 = document.getElementById("botao8");
 let timeouts = [];
 // Refere-se a o input
 let textos = document.getElementById("texto");
+let fase = document.getElementById("fase");
 // variaveis para fazer as gambiarra
 let pontos = 0;
 let cont = 0;
@@ -54,40 +49,21 @@ let estilo7 = window.getComputedStyle(botao7);
 let estilo8 = window.getComputedStyle(botao8);
 
 function Jogar(){
-  
   cont++;
   validar();
 }
 
-function chamarFase2(){
-  
-  voltarJogo();
+function chamarFase2(){ 
   fase2();
-  btn.onclick = chamarFase3;
 }
 
 function chamarFase3(){
-  voltarJogo();
   fase3();
-  btn.onclick = chamarFim;
 }
 
 function chamarFim(){
-
-  voltarJogo();
   pauseAudio();
   alert("você fez " + pontos + " Pontos, Acabou");
-}
-
-function chamarLevel(){
-  raio.style.display = "none";
-  modal.style.display = "none";
-  level.style.display = "block";
-}
-function voltarJogo(){
-  level.style.display = "none";
-  raio.style.display = "block";
-  modal.style.display = "block";
 }
 
 function reiniciarBonus(){
@@ -107,7 +83,6 @@ function validar(){
   }else {
     Parar();
     reiniciarBonus();
-
     setTimeout(function(){
       fase1();
       reiniciarAudio();
@@ -154,8 +129,12 @@ function fase1(){
     botao8.style.animation = "none";
   }, 13000));
   timeouts.push(setTimeout(function() {
-    chamarLevel();
-  }, 13500));
+    fase.value = "Proxima fase";
+    fase.style.animation = "textocolorido 5s infinite";
+  }, 13100));
+  timeouts.push(setTimeout(function() {
+    chamarFase2();
+  }, 13800));
   
 }
 
@@ -163,6 +142,8 @@ function fase2(){
 
   timeouts.push(setTimeout(function() {
     botao3.style.animation = "piscaPisca 5s infinite";
+    fase.value = "";
+    fase.style.animation = "none";
   }, 1000));
   timeouts.push(setTimeout(function() {
     botao6.style.animation = "piscaPisca 5s infinite";
@@ -196,14 +177,20 @@ function fase2(){
     botao8.style.animation = "none";
   }, 9000));
   timeouts.push(setTimeout(function() {
-    chamarLevel();
-  }, 9500));
+    fase.value = "Proxima fase";
+    fase.style.animation = "textocolorido 5s infinite";
+  }, 9100));
+  timeouts.push(setTimeout(function() {
+    chamarFase3();
+  }, 10000));
 }
 
 function fase3(){
 
   timeouts.push(setTimeout(function() {
     botao4.style.animation = "piscaPisca 5s infinite";
+    fase.value = "";
+    fase.style.animation = "none";
   }, 1000));
   timeouts.push(setTimeout(function() {
     botao8.style.animation = "piscaPisca 5s infinite";
@@ -237,7 +224,9 @@ function fase3(){
     botao2.style.animation = "none";
   }, 5000));
   timeouts.push(setTimeout(function() {
-    chamarLevel();
+    chamarFim();
+    fase.value = "Acabou"
+    fase.style.animation = "textocolorido 5s infinite";
   }, 5500));
 }
 

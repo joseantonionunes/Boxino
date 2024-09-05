@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body> 
-  <header>
-    <h1>Boxino</h1>
-  </header>
     <main>
+      <div class="proximo">
+        <input id="fase" type="text">
+      </div>
       <div class="container">
-        <img id="modal" alt="modal">
         <div class="centralizar">
           <div id="raio">
             <img id="botao" onclick="bonus(this)"  src="img/game_icon_full.png" alt="teste">
@@ -23,11 +22,6 @@
             <img id="botao6" onclick="bonus(this)" src="img/game_icon_full.png" alt="teste">
             <img id="botao7" onclick="bonus(this)" src="img/game_icon_full.png" alt="teste">
             <img id="botao8" onclick="bonus(this)" src="img/game_icon_full.png" alt="teste">
-            
-          </div>
-          <div id="level">
-            <img class="img" src="img/2.png" alt="luffy" srcset="" >
-              <button id="btn" onclick="chamarFase2()" type="button">Proximo</button>
           </div>
         </div>
         
@@ -35,7 +29,7 @@
       <div class="jogar">
         <button onclick="Jogar()">Começar</button>
         <button onclick="Parar()">Parar</button>
-        <input type="text" id="texto" placeholder="Pontos">
+        <input type="text" id="texto" placeholder="">
       </div> 
     </main>
     <script src="js/js.js"></script>

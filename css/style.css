@@ -3,119 +3,113 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
-header{
-    h1{
-        padding-top: 15px;
-        color: brown;
-        background-color: rgba(73, 73, 226, 0.829);
-        text-align: center;
-        font-size: 4em;
-        text-shadow: 1px 2px 3px black;
-    }
-}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,600;1,900&display=swap');
 
 main{
     background-color: rgba(73, 73, 226, 0.829);
     height: 100vh;
+    background-image: url(../img/imgFundo.jpg);
+    background-size: cover;
+
+    .proximo{
+        display: flex;
+        justify-content: center;
+        padding-top: 290px;
+        padding-left: 720px;
+        transform: translate(0px);
+        #fase{
+            text-align: center;
+            width: 450px; 
+            height: 70px; 
+            font-size: 70px; 
+            border: none; 
+            outline: none; 
+            background: transparent; 
+            font-family: "Fira Sans", sans-serif;
+            font-weight: 600;
+            font-style: italic;
+        }
+    }
+
     .container{
         display: flex;
         align-items: center;
-        justify-content: center;
-        padding-top: 20px;
-        #modal{
-            content:  url(../img/modal.png);
-            width: 240px;
-            height: 240px;
-            box-shadow: 0 0 15px black;
-            border-radius: 15px;
-        }
+        justify-content: center ;
+        margin-top: 430px;
+        margin-left: 510px;
         .centralizar{
             #raio{
-                width: 25%;
-                float: left;
+                width: 35%;
+                /* float: left; */
                 padding: 20px;
                 text-align: center;
                 transform: translateZ(40px);
                 cursor: pointer;
+                margin-top: -15px;
             
                 #botao{
                     position: absolute;
-                    width: 38px;
+                    width: 68px;
                     right: 55px;
-                    top: -80px;
+                    top: -130px;
                     border-radius: 50%;
                     cursor: pointer;
                 }    
                 #botao2{
                     position: absolute;
-                    width: 38px;
-                    right: 230px;
-                    top: 0px;
+                    width: 68px;
+                    right: 410px;
+                    top: -15px;
                     border-radius: 50%;
                     cursor: pointer;
                 }
                 #botao3{
                     position: absolute;
-                    width: 38px;
+                    width: 68px;
                     right: 55px;
-                    top: 70px;
+                    top: 100px;
                     border-radius: 50%;
                     cursor: pointer;
                 }
                 #botao4{
                     position: absolute;
-                    width: 38px;
-                    right: 230px;
-                    top: 70px;
+                    width: 68px;
+                    right: 410px;
+                    top: 100px;
                     border-radius: 50%;
                     cursor: pointer;
                 }
                 #botao5{
                     position: absolute;
-                    width: 38px;
-                    right: 145px;
-                    top: 70px;
+                    width: 68px;
+                    right: 230px;
+                    top: 100px;
                     border-radius: 50%;
                     cursor: pointer;
                 }
                 #botao6{
                     position: absolute;
-                    width: 38px;
-                    right: 230px;
-                    top: -80px;
+                    width: 68px;
+                    right: 410px;
+                    top: -130px;
                     border-radius: 50%;
                     cursor: pointer;
                 }
                 #botao7{
                     position: absolute;
-                    width: 38px;
+                    width: 68px;
                     right: 55px;
-                    top: 0px;
+                    top: -15px;
                     border-radius: 50%;
                     cursor: pointer;
                 }
                 #botao8{
                     position: absolute;
-                    width: 38px;
-                    right: 145px;
-                    top: -80px;
+                    width: 68px;
+                    right: 230px;
+                    top: -130px;
                     border-radius: 50%;
                     cursor: pointer;
-                }
-            }
-            #level{
-                position: relative;
-                display: none;
-                .img{
-                    max-width: 580px;
-                    max-height: 280px;
-                }
-                #btn{
-                    z-index: 1;
-                    position: absolute;
-                    top: 80%;
-                    left: 38%;
                 }
             }
         }  
@@ -125,7 +119,7 @@ main{
     button {
         background-color: black;
         color: white;
-        padding: 15px;
+        padding: 25px;
         border-radius: 15px;
         cursor: pointer;
         margin-left: 10px;
@@ -133,15 +127,16 @@ main{
 
     .jogar{
         display: flex;
-        justify-content: center;
-        padding-top: 25px;
-
+        justify-content: left;
+        padding-top: -45px;
+        margin-left: 195px;
         #texto{
+            text-align: center;
             margin-left: 15px;
-            width: 150px; 
-            height: 40px; 
-            color: black; 
-            font-size: 15px; 
+            width: 60px; 
+            height: 50px; 
+            color: blue; 
+            font-size: 45px; 
             font-style: oblique;
         }
     }        
@@ -159,4 +154,18 @@ main{
     85%{background-color: blue; }
     95% {background-color: blue;}
     100% {background-color: red;}
+}
+
+@keyframes textocolorido {
+    0%{color: blue; }
+    10% {color: blue;}
+    25% {color: red;}
+    35%{color: red;}
+    45%{color: blue; }
+    55% {color: blue;}
+    65% {color: red;}
+    75%{color: red;}
+    85%{color: blue;}
+    95% {color: blue;}
+    100% {color: red;}
 }
