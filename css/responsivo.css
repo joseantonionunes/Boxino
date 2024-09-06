@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 1095px) and (max-width: 1430px) {
+
+    .proximo{
+        margin-left: -200px;
+    }
+    
+} 
+
+@media screen and (min-width: 800px) and (max-width: 1220px) {
+
+    .proximo{
+        margin-left: -550px;
+    }
+    
+} 
+
+@media screen and (min-width: 400px) and (max-width: 875px) {
+
+    .proximo{
+        margin-left: -950px;
+    }
+    
+}
