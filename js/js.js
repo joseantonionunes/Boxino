@@ -71,6 +71,7 @@ function chamarFim(){
   txtfase.style.animation = "textocolorido 5s infinite";
   txtfase2.value = pontos + " pontos";
   txtfase2.style.animation = "textocolorido 5s infinite";
+  window.location.href = '../public/indwx.html';
 }
 
 function reiniciarBonus(){
@@ -329,6 +330,7 @@ function fase3(){
 
   timeouts.push(setTimeout(function() {
     chamarFim();
+    
   }, 9000));
 }
 
