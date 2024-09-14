@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+main{
+    height: 100vh;
+    h1{
+        text-align: center;
+        font-size: 3em;
+        top: 80px;
+        position: relative;
+    }
+    .center{
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        form{
+            #nome{
+                width: 115px; 
+                font-size: 30px; 
+                border: none; 
+                border-bottom: 2px solid black;
+                outline: none; 
+                background: transparent; 
+            }
+            #pontos{
+                display: block;
+                margin-top: 10px;
+                text-align: center;
+                width: 115px; 
+                font-size: 30px; 
+                border: none; 
+                border-bottom: 2px solid black;
+                outline: none; 
+                background: transparent; 
+            }
+            button{
+                padding: 15px;
+                background-color: black;
+                color: white;
+                border-radius: 20px;
+                margin-top: 10px;
+            }
+        }
+        
+    }
+}

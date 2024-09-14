@@ -28,7 +28,10 @@ db.run(`CREATE TABLE IF NOT EXISTS usuario (
 )`);
 
 app.post('/add-user', (req, res) => {
+
   const { nome, pontos } = req.body;
+  console.log("pontos recebidos:" + pontos);
+
   db.run(`INSERT INTO usuario (nome, pontos) VALUES (?, ?)`, [nome, pontos], function(err) {
     if (err) {
       return res.status(500).json({ error: err.message });

@@ -57,6 +57,23 @@ function Jogar(){
   txtfase2.style.animation = "none";
 }
 
+function enviarPontos(pontos) {
+  fetch('/add-user', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ pontos: pontos })
+  })
+  .then(response => response.json())
+  .then(data => {
+      console.log('Pontos enviados com sucesso:', data);
+  })
+  .catch((error) => {
+      console.error('Erro ao enviar os pontos:', error);
+  });
+}
+
 function chamarFase2(){ 
   fase2();
 }
@@ -67,11 +84,8 @@ function chamarFase3(){
 
 function chamarFim(){
   pauseAudio();
-  txtfase.value = "Acabou.";
-  txtfase.style.animation = "textocolorido 5s infinite";
-  txtfase2.value = pontos + " pontos";
-  txtfase2.style.animation = "textocolorido 5s infinite";
-  window.location.href = '../public/indwx.html';
+  enviarPontos(pontos);
+  window.location.href = '../public/index.html';
 }
 
 function reiniciarBonus(){
