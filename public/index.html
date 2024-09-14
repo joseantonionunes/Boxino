@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Usuário</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="gameover.css">
 </head>
 <body> 
-    <header>
-        <h1>Teste</h1>
-    </header>
     <main>
-        <form id="userForm">
-            <label for="nome">Nome</label>
-            <input id="nome" type="text" required />
-            <input id="pontos" type="number" required />
-            <button type="submit">Cadastrar</button>
-        </form>
+        <h1>Cadastro</h1>
+        <section class="center">
+            <form id="userForm">
+                <!-- <label for="nome">Nome</label> -->
+                <input id="nome" type="text" placeholder="Nome" autocomplete="none" />
+                <input id="pontos" type="number" autocomplete="none" placeholder="Pontos" />
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
         <section id="userList">
             <h2>Usuários Cadastrados</h2>
             <ul id="users"></ul>
