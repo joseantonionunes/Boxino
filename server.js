@@ -1,4 +1,5 @@
 const express = require('express');
+// import {express} from 'express';
 const bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
@@ -9,6 +10,7 @@ const port = 3000;
 
 // Middleware
 app.use(bodyParser.json());
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -27,9 +29,10 @@ db.run(`CREATE TABLE IF NOT EXISTS usuario (
   pontos INTEGER
 )`);
 
+// Rota para adicionar usuário e pontos
 app.post('/add-user', (req, res) => {
-
   const { nome, pontos } = req.body;
+  
   console.log("pontos recebidos:" + pontos);
 
   db.run(`INSERT INTO usuario (nome, pontos) VALUES (?, ?)`, [nome, pontos], function(err) {
@@ -49,6 +52,14 @@ app.get('/get-users', (req, res) => {
     res.status(200).json(rows);
   });
 });
+
+// Delete
+// db.run('DELETE FROM usuario', function(err) {
+//   if (err) {
+//       return console.error(err.message);
+//   }
+//   console.log(`Todos os registros foram deletados da tabela.`);
+// });
 
 app.listen(port, () => {
   console.log(`Servidor ouvindo na porta ${port}`);

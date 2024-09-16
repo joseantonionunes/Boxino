@@ -1,11 +1,12 @@
 // Função para cadastrar usuário
 function cadastrar(nome, pontos) {
+   
     fetch('http://localhost:3000/add-user', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ nome, pontos })
+        body: JSON.stringify({ nome, pontos})
     })
     .then(response => response.json())
     .then(data => {
@@ -41,10 +42,10 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o envio padrão do formulário
 
     const nome = document.getElementById('nome').value;
-    const pontos = document.getElementById('pontos').value; // Valor fixo para pontos
-
+    // const pontos = document.getElementById('pontos').value; 
     cadastrar(nome, pontos);
 });
+
 
 // Lista usuários ao carregar a página
 document.addEventListener('DOMContentLoaded', listarUsuarios);
