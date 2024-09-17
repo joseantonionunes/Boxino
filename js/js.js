@@ -90,7 +90,7 @@ function reiniciarAudio(){
   }
 
   function chamarFim(){
-    // pauseAudio();
+    pauseAudio();
     enviarPontos(nome.value, pontos);
     window.location.href = '../public/index.html';
   }
@@ -106,9 +106,11 @@ function reiniciarAudio(){
   function validar() {
     if (cont === 1) {
       setTimeout(() => fase1(), 1000);
+      playAudio();
     } else {
       Parar();
       reiniciarBonus();
+      reiniciarAudio();
       setTimeout(() => fase1(), 1000);
     }
   }

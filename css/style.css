@@ -1,6 +1,6 @@
 *{
     margin: 0px;
-    padding: 0px;
+    padding: 0px; 
     box-sizing: border-box;
 }
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,600;1,900&display=swap');
@@ -25,11 +25,13 @@ main{
             
             text-align: center;
             position: relative;
-            top: 250px;
-            /* width: 115px;  */
+            top: 380px;
+            margin-left: 450px;
+            width: 115px; 
             font-size: 40px; 
+            font-weight: bolder;
             border: none; 
-            /* border-bottom: 2px solid black; */
+            border-bottom: 2px solid black;
             outline: none; 
             background: transparent; 
             
@@ -38,7 +40,7 @@ main{
 
     .proximo{ 
         padding-top: 280px;
-        padding-left: 1000px;
+        padding-left: 1100px;
         #txtfase{
             text-align: center;
             width: 450px; 
@@ -76,7 +78,7 @@ main{
         display: flex;
         align-items: center;
         justify-content: center ;
-        margin-top: 125px;
+        margin-top: 175px;
         margin-left: 510px;
         .centralizar{
             #raio{
