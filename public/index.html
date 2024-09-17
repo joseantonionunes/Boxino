@@ -4,25 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Usuário</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="gameover.css">
 </head>
 <body> 
     <main>
-        <h1>Cadastro</h1>
+        <h1>Jogadores Cadastrados</h1>
         <section class="center">
             <form id="userForm">
-                <!-- <label for="nome">Nome</label> -->
+                 <!-- <label for="nome">Nome</label> 
                 <input id="nome" type="text" placeholder="Nome" autocomplete="none" />
-                <input id="pontos" type="number" autocomplete="none" placeholder="Pontos" />
+                <input id="pontos" type="number" autocomplete="none" placeholder="Pontos" /> -->
                 <button type="submit">Cadastrar</button>
             </form>
         </section>
         <section id="userList">
-            <h2>Usuários Cadastrados</h2>
-            <ul id="users"></ul>
+            <!-- <h2>Usuários Cadastrados</h2> -->
+            <table id="users">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Pontos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- A lista de usuários será inserida aqui -->
+                </tbody>
+            </table>
         </section>
     </main>
-    <script src="config.js"></script>
+    
 </body>
+    <script src="config.js"></script>
 </html>

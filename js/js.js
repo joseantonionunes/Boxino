@@ -1,20 +1,20 @@
-// var bgmusix = new Audio();
-// bgmusix.src = "../audio/bgm.mp3";
-// bgmusix.vol = 0.4;
+var bgmusix = new Audio();
+bgmusix.src = "../audio/bgm.mp3";
+bgmusix.vol = 0.4;
 
 
-// function playAudio(){
-//   bgmusix.play();
-// }
+function playAudio(){
+  bgmusix.play();
+}
 
-// function pauseAudio(){
-//   bgmusix.pause();
-// }
+function pauseAudio(){
+  bgmusix.pause();
+}
 
-// function reiniciarAudio(){
-//   bgmusix.currentTime = 0;
-//   playAudio();
-// }
+function reiniciarAudio(){
+  bgmusix.currentTime = 0;
+  playAudio();
+}
 
   // Refere-se as img de raio 
   var botao = document.getElementById("botao");
@@ -34,8 +34,8 @@
   let txtfase2 = document.getElementById("txtfase2");
   // variaveis para fazer as gambiarra
   let pontos = 5;
-
-  let nome  ="Tonin"
+  let nome  = document.getElementById('nome');
+  
   let cont = 0;
   // let para = false;
   let clicada = false;
@@ -52,13 +52,13 @@
   let estilo8 = window.getComputedStyle(botao8);
 
   // Exemplo: Reimplementação da função de envio de pontos
-  function enviarPontos(pontos) {
+  function enviarPontos(nome, pontos) {
     fetch('http://localhost:3000/add-user', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({pontos })
+        body: JSON.stringify({nome, pontos })
     })
     .then(response => response.json())
     .then(data => {
@@ -72,6 +72,7 @@
 
   function Jogar(){
     cont++;
+    
     validar();
     txtfase.value = "Começar";
     txtfase.style.animation = "textocolorido 5s infinite";
@@ -90,7 +91,7 @@
 
   function chamarFim(){
     // pauseAudio();
-    enviarPontos(pontos);
+    enviarPontos(nome.value, pontos);
     window.location.href = '../public/index.html';
   }
 

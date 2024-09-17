@@ -34,6 +34,7 @@ app.post('/add-user', (req, res) => {
   const { nome, pontos } = req.body;
   
   console.log("pontos recebidos:" + pontos);
+  console.log("nome recebidos:" + nome);
 
   db.run(`INSERT INTO usuario (nome, pontos) VALUES (?, ?)`, [nome, pontos], function(err) {
     if (err) {

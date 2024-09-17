@@ -20,6 +20,22 @@ main{
     background-position: center; 
     background-repeat: no-repeat;
 
+    #txtnome{
+        #nome{
+            
+            text-align: center;
+            position: relative;
+            top: 250px;
+            /* width: 115px;  */
+            font-size: 40px; 
+            border: none; 
+            /* border-bottom: 2px solid black; */
+            outline: none; 
+            background: transparent; 
+            
+        }
+    }
+
     .proximo{ 
         padding-top: 280px;
         padding-left: 1000px;
@@ -51,7 +67,7 @@ main{
     }
 
     .jogar{
-        padding-top: 80px;
+        padding-top: 50px;
         margin-left: 235px;
         color: red; 
     }   
@@ -60,7 +76,7 @@ main{
         display: flex;
         align-items: center;
         justify-content: center ;
-        margin-top: 175px;
+        margin-top: 125px;
         margin-left: 510px;
         .centralizar{
             #raio{
