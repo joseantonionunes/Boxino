@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boxino</title>
@@ -12,7 +12,7 @@
 <body> 
     <main> 
       <div id="txtnome">
-        <input id="nome" type="text" placeholder="nome" autocomplete="none"  >
+        <input id="nome" type="text" placeholder="nome" autocomplete="none" maxlength="4" >
       </div>
       <div class="proximo">
         <input id="txtfase" type="text" placeholder="" disabled > 
@@ -20,12 +20,13 @@
       </div>
 
       <div class="jogar">
-        <button onclick="Jogar()">Começar</button>
+        <a href="indexSite.html"><button>Voltar</button></a>
+        <button onclick="Jogar()">Start</button>
         <button onclick="Parar()">Parar</button>
       </div> 
 
       <div class="container">
-        <div class="centralizar">
+        <div class="centralizar"> 
           <div id="raio">
             <img id="botao" onclick="bonus(this)"  src="img/game_icon_full.png" alt="teste">
             <img id="botao2" onclick="bonus(this)" src="img/game_icon_full.png" alt="teste">

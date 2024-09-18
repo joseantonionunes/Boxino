@@ -24,6 +24,9 @@ function listarUsuarios() {
     fetch('http://localhost:3000/get-users')
         .then(response => response.json())
         .then(users => {
+            // Ordena os usuários por pontos em ordem decrescente
+            users.sort((a, b) => b.pontos - a.pontos);
+
             const userTableBody = document.querySelector('#users tbody');
             userTableBody.innerHTML = ''; // Limpa a tabela existente
 
@@ -51,18 +54,29 @@ function listarUsuarios() {
 //     fetch('http://localhost:3000/get-users')
 //         .then(response => response.json())
 //         .then(users => {
-//             const userList = document.getElementById('users');
-//             userList.innerHTML = ''; // Limpa a lista existente
+//             const userTableBody = document.querySelector('#users tbody');
+//             userTableBody.innerHTML = ''; // Limpa a tabela existente
+
 //             users.forEach(user => {
-//                 const li = document.createElement('li');
-//                 li.textContent = `${user.nome} - ${user.pontos} pontos`;
-//                 userList.appendChild(li);
+//                 const tr = document.createElement('tr');
+
+//                 const tdNome = document.createElement('td');
+//                 tdNome.textContent = user.nome;
+//                 tr.appendChild(tdNome);
+
+//                 const tdPontos = document.createElement('td');
+//                 tdPontos.textContent = user.pontos;
+//                 tr.appendChild(tdPontos);
+
+//                 userTableBody.appendChild(tr);
 //             });
 //         })
 //         .catch(error => {
 //             console.error('Erro ao listar usuários:', error);
 //         });
 // }
+
+
 
 // Adiciona um listener para o formulário
 document.getElementById('userForm').addEventListener('submit', function(event) {

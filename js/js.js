@@ -33,7 +33,7 @@ function reiniciarAudio(){
   let txtfase = document.getElementById("txtfase");
   let txtfase2 = document.getElementById("txtfase2");
   // variaveis para fazer as gambiarra
-  let pontos = 5;
+  let pontos = 0;
   let nome  = document.getElementById('nome');
   
   let cont = 0;
@@ -74,7 +74,7 @@ function reiniciarAudio(){
     cont++;
     
     validar();
-    txtfase.value = "Começar";
+    txtfase.value = "Start";
     txtfase.style.animation = "textocolorido 5s infinite";
     txtfase2.value = "";
     txtfase2.style.animation = "none";
@@ -90,7 +90,7 @@ function reiniciarAudio(){
   }
 
   function chamarFim(){
-    // pauseAudio();
+    pauseAudio();
     enviarPontos(nome.value, pontos);
     window.location.href = '../public/index.html';
   }
@@ -106,15 +106,99 @@ function reiniciarAudio(){
   function validar() {
     if (cont === 1) {
       setTimeout(() => fase1(), 1000);
+      playAudio();
+      
     } else {
       Parar();
       reiniciarBonus();
+      reiniciarAudio();
       setTimeout(() => fase1(), 1000);
     }
   }
 
 
   function fase1(){
+
+    timeouts.push(setTimeout(function() {
+      botao.style.animation = "piscaPisca 5s infinite";
+      txtfase.style.animation = "none";
+      txtfase.value = "";
+    }, 1200));
+    timeouts.push(setTimeout(function() {
+      botao2.style.animation = "piscaPisca 5s infinite";
+      botao.style.animation = "none";
+    }, 2400));
+    timeouts.push(setTimeout(function() {
+      botao3.style.animation = "piscaPisca 5s infinite";
+      botao2.style.animation = "none";
+    }, 3600));
+    timeouts.push(setTimeout(function() {
+      botao4.style.animation = "piscaPisca 5s infinite";
+      botao3.style.animation = "none";
+    }, 4800));
+    timeouts.push(setTimeout(function() {
+      botao5.style.animation = "piscaPisca 5s infinite";
+      botao4.style.animation = "none";
+    }, 6000));
+    timeouts.push(setTimeout(function() {
+      botao6.style.animation = "piscaPisca 5s infinite";
+      botao5.style.animation = "none";
+    }, 7200));
+    timeouts.push(setTimeout(function() {
+      botao7.style.animation = "piscaPisca 5s infinite";
+      botao6.style.animation = "none";
+    }, 8400));
+    timeouts.push(setTimeout(function() {
+      botao8.style.animation = "piscaPisca 5s infinite";
+      botao7.style.animation = "none";
+    }, 9600));
+    timeouts.push(setTimeout(function() {
+      botao5.style.animation = "piscaPisca 5s infinite";
+      botao8.style.animation = "none";
+    }, 10800));
+    timeouts.push(setTimeout(function() {
+      botao6.style.animation = "piscaPisca 5s infinite";
+      botao5.style.animation = "none";
+    }, 12000));
+    timeouts.push(setTimeout(function() {
+      botao3.style.animation = "piscaPisca 5s infinite";
+      botao6.style.animation = "none";
+    }, 13200));
+    timeouts.push(setTimeout(function() {
+      botao2.style.animation = "piscaPisca 5s infinite";
+      botao3.style.animation = "none";
+    }, 14400));
+    timeouts.push(setTimeout(function() {
+      botao7.style.animation = "piscaPisca 5s infinite";
+      botao2.style.animation = "none";
+    }, 15600));
+    timeouts.push(setTimeout(function() {
+      botao4.style.animation = "piscaPisca 5s infinite";
+      botao7.style.animation = "none";
+    }, 16800));
+    timeouts.push(setTimeout(function() {
+      botao.style.animation = "piscaPisca 5s infinite";
+      botao4.style.animation = "none";
+    }, 18000));
+    timeouts.push(setTimeout(function() {
+      botao6.style.animation = "piscaPisca 5s infinite";
+      botao.style.animation = "none";
+    }, 19200));
+    timeouts.push(setTimeout(function() {
+      botao6.style.animation = "none";
+    }, 20400));
+
+    timeouts.push(setTimeout(function() {
+      txtfase.value = "Fase 2";
+      txtfase.style.animation = "textocolorido 5s infinite";
+    }, 21600));
+    timeouts.push(setTimeout(function() {
+      chamarFase2();
+    }, 22200));
+    
+  }
+
+  function fase2(){
 
     timeouts.push(setTimeout(function() {
       botao3.style.animation = "piscaPisca 5s infinite";
@@ -162,36 +246,35 @@ function reiniciarAudio(){
       botao4.style.animation = "none";
     }, 11000));
     timeouts.push(setTimeout(function() {
-      botao.style.animation = "piscaPisca 5s infinite";
+      botao6.style.animation = "piscaPisca 5s infinite";
       botao7.style.animation = "none";
     }, 12000));
     timeouts.push(setTimeout(function() {
-      botao6.style.animation = "piscaPisca 5s infinite";
-      botao.style.animation = "none";
+      botao.style.animation = "piscaPisca 5s infinite";
+      botao6.style.animation = "none";
     }, 13000));
     timeouts.push(setTimeout(function() {
       botao2.style.animation = "piscaPisca 5s infinite";
-      botao6.style.animation = "none";
+      botao.style.animation = "none";
     }, 14000));
     timeouts.push(setTimeout(function() {
-      botao4.style.animation = "piscaPisca 5s infinite";
+      botao5.style.animation = "piscaPisca 5s infinite";
       botao2.style.animation = "none";
     }, 15000));
     timeouts.push(setTimeout(function() {
-      botao4.style.animation = "none";
+      botao5.style.animation = "none";
     }, 16000));
 
     timeouts.push(setTimeout(function() {
-      txtfase.value = "Proxima fase";
+      txtfase.value = "Ultima fase";
       txtfase.style.animation = "textocolorido 5s infinite";
-    }, 16500));
+    }, 17000));
     timeouts.push(setTimeout(function() {
-      chamarFase2();
-    }, 17500));
-    
+      chamarFase3();
+    }, 18000));
   }
 
-  function fase2(){
+  function fase3(){
 
     timeouts.push(setTimeout(function() {
       botao4.style.animation = "piscaPisca 5s infinite";
@@ -199,148 +282,70 @@ function reiniciarAudio(){
       txtfase.style.animation = "none";
     }, 800));
     timeouts.push(setTimeout(function() {
-      botao8.style.animation = "piscaPisca 5s infinite";
+      botao.style.animation = "piscaPisca 5s infinite";
       botao4.style.animation = "none";
     }, 1600));
     timeouts.push(setTimeout(function() {
-      botao3.style.animation = "piscaPisca 5s infinite";
-      botao8.style.animation = "none";
+      botao6.style.animation = "piscaPisca 5s infinite";
+      botao.style.animation = "none";
     }, 2400));
     timeouts.push(setTimeout(function() {
-      botao6.style.animation = "piscaPisca 5s infinite";
-      botao3.style.animation = "none";
+      botao3.style.animation = "piscaPisca 5s infinite";
+      botao6.style.animation = "none";
     }, 3200));
     timeouts.push(setTimeout(function() {
-      botao5.style.animation = "piscaPisca 5s infinite";
-      botao6.style.animation = "none";
+      botao8.style.animation = "piscaPisca 5s infinite";
+      botao3.style.animation = "none";
     }, 4000));
     timeouts.push(setTimeout(function() {
       botao.style.animation = "piscaPisca 5s infinite";
-      botao5.style.animation = "none";
+      botao8.style.animation = "none";
     }, 4800));
     timeouts.push(setTimeout(function() {
-      botao7.style.animation = "piscaPisca 5s infinite";
+      botao4.style.animation = "piscaPisca 5s infinite";
       botao.style.animation = "none";
     }, 5600));
     timeouts.push(setTimeout(function() {
-      botao2.style.animation = "piscaPisca 5s infinite";
-      botao7.style.animation = "none";
+      botao7.style.animation = "piscaPisca 5s infinite";
+      botao4.style.animation = "none";
     }, 6400));
     timeouts.push(setTimeout(function() {
       botao6.style.animation = "piscaPisca 5s infinite";
-      botao2.style.animation = "none";
+      botao7.style.animation = "none";
     }, 7200));
     timeouts.push(setTimeout(function() {
-      botao4.style.animation = "piscaPisca 5s infinite";
+      botao.style.animation = "piscaPisca 5s infinite";
       botao6.style.animation = "none";
     }, 8000));
     timeouts.push(setTimeout(function() {
-      botao3.style.animation = "piscaPisca 5s infinite";
-      botao4.style.animation = "none";
-    }, 8800));
-    timeouts.push(setTimeout(function() {
-      botao.style.animation = "piscaPisca 5s infinite";
-      botao3.style.animation = "none";
-    }, 9600));
-    timeouts.push(setTimeout(function() {
       botao2.style.animation = "piscaPisca 5s infinite";
       botao.style.animation = "none";
+    }, 8800));
+    timeouts.push(setTimeout(function() {
+      botao5.style.animation = "piscaPisca 5s infinite";
+      botao2.style.animation = "none";
+    }, 9600));
+    timeouts.push(setTimeout(function() {
+      botao6.style.animation = "piscaPisca 5s infinite";
+      botao5.style.animation = "none";
     }, 10400));
     timeouts.push(setTimeout(function() {
-      botao8.style.animation = "piscaPisca 5s infinite";
-      botao2.style.animation = "none";
+      botao3.style.animation = "piscaPisca 5s infinite";
+      botao6.style.animation = "none";
     }, 11200));
     timeouts.push(setTimeout(function() {
       botao4.style.animation = "piscaPisca 5s infinite";
-      botao8.style.animation = "none";
+      botao3.style.animation = "none";
     }, 12000));
     timeouts.push(setTimeout(function() {
       botao4.style.animation = "none";
     }, 12800));
 
-    timeouts.push(setTimeout(function() {
-      txtfase.value = "Ultima fase";
-      txtfase.style.animation = "textocolorido 5s infinite";
-    }, 13200));
-    timeouts.push(setTimeout(function() {
-      chamarFase3();
-    }, 14000));
-  }
-
-  function fase3(){
-
-    timeouts.push(setTimeout(function() {
-      botao.style.animation = "piscaPisca 5s infinite";
-      txtfase.style.animation = "none";
-      txtfase.value = "";
-    }, 500));
-    timeouts.push(setTimeout(function() {
-      botao2.style.animation = "piscaPisca 5s infinite";
-      botao.style.animation = "none";
-    }, 1000));
-    timeouts.push(setTimeout(function() {
-      botao3.style.animation = "piscaPisca 5s infinite";
-      botao2.style.animation = "none";
-    }, 1500));
-    timeouts.push(setTimeout(function() {
-      botao4.style.animation = "piscaPisca 5s infinite";
-      botao3.style.animation = "none";
-    }, 2000));
-    timeouts.push(setTimeout(function() {
-      botao5.style.animation = "piscaPisca 5s infinite";
-      botao4.style.animation = "none";
-    }, 2500));
-    timeouts.push(setTimeout(function() {
-      botao6.style.animation = "piscaPisca 5s infinite";
-      botao5.style.animation = "none";
-    }, 3000));
-    timeouts.push(setTimeout(function() {
-      botao7.style.animation = "piscaPisca 5s infinite";
-      botao6.style.animation = "none";
-    }, 3500));
-    timeouts.push(setTimeout(function() {
-      botao8.style.animation = "piscaPisca 5s infinite";
-      botao7.style.animation = "none";
-    }, 4000));
-    timeouts.push(setTimeout(function() {
-      botao5.style.animation = "piscaPisca 5s infinite";
-      botao8.style.animation = "none";
-    }, 4500));
-    timeouts.push(setTimeout(function() {
-      botao6.style.animation = "piscaPisca 5s infinite";
-      botao5.style.animation = "none";
-    }, 5000));
-    timeouts.push(setTimeout(function() {
-      botao3.style.animation = "piscaPisca 5s infinite";
-      botao6.style.animation = "none";
-    }, 5500));
-    timeouts.push(setTimeout(function() {
-      botao2.style.animation = "piscaPisca 5s infinite";
-      botao3.style.animation = "none";
-    }, 6000));
-    timeouts.push(setTimeout(function() {
-      botao4.style.animation = "piscaPisca 5s infinite";
-      botao2.style.animation = "none";
-    }, 6500));
-    timeouts.push(setTimeout(function() {
-      botao7.style.animation = "piscaPisca 5s infinite";
-      botao4.style.animation = "none";
-    }, 7000));
-    timeouts.push(setTimeout(function() {
-      botao.style.animation = "piscaPisca 5s infinite";
-      botao7.style.animation = "none";
-    }, 7500));
-    timeouts.push(setTimeout(function() {
-      botao6.style.animation = "piscaPisca 5s infinite";
-      botao.style.animation = "none";
-    }, 8000));
-    timeouts.push(setTimeout(function() {
-      botao6.style.animation = "none";
-    }, 8500));
+    
 
     timeouts.push(setTimeout(function() {
       chamarFim();
-    }, 9000));
+    }, 13500));
   }
 
   function Parar(){
@@ -377,60 +382,62 @@ function reiniciarAudio(){
 
   function bonus(imagem){
 
-    if(imagem.id == "botao" && estilo.animationName != "none"){
-      if (clicada != true) {
+    if(imagem.id == "botao" && estilo.animationName !== "none"){
+      if (clicada !== true) {
           pontos++;
           clicada = true;
       }
+      clicada2 = false;
       
-    }else if(imagem.id == "botao2" && estilo2.animationName != "none"){
-      if (clicada2 != true) {
+    }else if(imagem.id == "botao2" && estilo2.animationName !== "none"){
+      if (clicada2 !== true) {
         pontos++;
         clicada2 = true;
       }
       clicada = false;
     }
-    else if(imagem.id == "botao3" && estilo3.animationName != "none"){
-      if (clicada != true) {
+    else if(imagem.id == "botao3" && estilo3.animationName !== "none"){
+      if (clicada !== true) {
         pontos++;
         clicada = true;
       }
       clicada2 = false;
     }
-    else if(imagem.id == "botao4" && estilo4.animationName != "none"){
-      if (clicada2 != true) {
+    else if(imagem.id == "botao4" && estilo4.animationName !== "none"){
+      if (clicada2 !== true) {
         pontos++;
         clicada2 = true;
       }
       clicada = false;
     }
-    else if(imagem.id == "botao5" && estilo5.animationName != "none"){
-      if (clicada != true) {
+    else if(imagem.id == "botao5" && estilo5.animationName !== "none"){
+      if (clicada !== true) {
         pontos++;
         clicada = true;
       }
       clicada2 = false;
     }
-    else if(imagem.id == "botao6" && estilo6.animationName != "none"){
-      if (clicada2 != true) {
+    else if(imagem.id == "botao6" && estilo6.animationName !== "none"){
+      if (clicada2 !== true) {
         pontos++;
         clicada2 = true;
       }
       clicada = false;
     }
-    else if(imagem.id == "botao7" && estilo7.animationName != "none"){
-      if (clicada != true) {
+    else if(imagem.id == "botao7" && estilo7.animationName !== "none"){
+      if (clicada !== true) {
         pontos++;
         clicada = true;
       }
       clicada2 = false;
     }
-    else if(imagem.id == "botao8" && estilo8.animationName != "none"){
-      if (clicada2 != true) {
+    else if(imagem.id == "botao8" && estilo8.animationName !== "none"){
+      if (clicada2 !== true) {
         pontos++;
         clicada2 = true;
       }
       clicada = false;
     }
+    
   }
 

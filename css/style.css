@@ -1,22 +1,31 @@
 *{
     margin: 0px;
-    padding: 0px;
+    padding: 0px; 
     box-sizing: border-box;
 }
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,600;1,900&display=swap');
+
+@font-face {
+    font-family: Pixel02;
+   src: url(../fonts/04b_30/04B_30__.TTF); 
+}
+:root{
+    --cursor-boxe: url(../imgs/cursor.png), auto;
+}
 
 body {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    cursor: var(--cursor-boxe);
 }
 
 main{
     height: 100vh;
     background-image: url(../img/imgFundo.jpg);
     /* background-size: cover; */
-    background-size: 1900px auto;
+    background-size: 100% auto;
     background-position: center; 
     background-repeat: no-repeat;
 
@@ -25,59 +34,73 @@ main{
             
             text-align: center;
             position: relative;
-            top: 250px;
-            /* width: 115px;  */
+            top: 350px;
+            margin-left: 200px;
+            width: 135px; 
             font-size: 40px; 
             border: none; 
-            /* border-bottom: 2px solid black; */
+            border-bottom: 2px solid rgb(0, 0, 0); 
             outline: none; 
             background: transparent; 
-            
+            font-family: Pixel02;
+            cursor: var(--cursor-boxe);   
+        }
+        input::placeholder{
+            color:rgb(15, 15, 15);
+            opacity: 2;
         }
     }
 
     .proximo{ 
-        padding-top: 280px;
-        padding-left: 1000px;
+        padding-top: 220px;
+        padding-left: 600px;
         #txtfase{
             text-align: center;
-            width: 450px; 
+            width: 675px; 
             height: 70px; 
             font-size: 70px; 
             border: none; 
             outline: none; 
             background: transparent; 
-            font-family: "Fira Sans", sans-serif;
+            font-family: Pixel02;
             font-weight: 600;
-            font-style: italic;
+            cursor: var(--cursor-boxe);
         }
         #txtfase2{
             display: block;
             text-align: center;
-            width: 480px; 
+            width: 620px; 
             height: 70px; 
             font-size: 70px; 
             border: none; 
             outline: none; 
             background: transparent; 
-            font-family: "Fira Sans", sans-serif;
+            font-family: Pixel02;
             font-weight: 600;
-            font-style: italic;
+            cursor: var(--cursor-boxe);
         }
     }
 
     .jogar{
         padding-top: 50px;
-        margin-left: 235px;
+        margin-left: 35px;
         color: red; 
+        button{
+            background-color: rgb(226, 72, 60);
+        }
+        button:hover{
+            background-color: black;
+            color: rgb(226, 72, 60);
+        }
+        }
     }   
 
     .container{
         display: flex;
         align-items: center;
         justify-content: center ;
-        margin-top: 125px;
-        margin-left: 510px;
+        margin-top: -15px;
+        margin-left: 210px;
         .centralizar{
             #raio{
                 width: 35%;
@@ -88,68 +111,76 @@ main{
                 margin-top: -15px;
             
                 #botao{
+                    /* direto de cima */
                     position: absolute;
-                    width: 68px;
-                    right: 55px;
-                    top: -130px;
+                    width: 53px;
+                    right: -25px;
+                    top: -80px;
                     border-radius: 50%;
-                    cursor: pointer;
+                    cursor: var(--cursor-boxe);
                 }    
                 #botao2{
+                    /* meio da esquerda */
                     position: absolute;
-                    width: 68px;
-                    right: 410px;
-                    top: -15px;
+                    width: 53px;
+                    right: 215px;
+                    top: 0px;
                     border-radius: 50%;
-                    cursor: pointer;
+                    cursor: var(--cursor-boxe);
                 }
                 #botao3{
+                    /* direito de baixo */
                     position: absolute;
-                    width: 68px;
-                    right: 55px;
-                    top: 100px;
+                    width: 53px;
+                    right: -25px;
+                    top: 80px;
                     border-radius: 50%;
-                    cursor: pointer;
+                    cursor: var(--cursor-boxe);
                 }
                 #botao4{
+                    /* esquerda de baixo */
                     position: absolute;
-                    width: 68px;
-                    right: 410px;
-                    top: 100px;
+                    width: 53px;
+                    right: 215px;
+                    top: 80px;
                     border-radius: 50%;
-                    cursor: pointer;
+                    cursor: var(--cursor-boxe);
                 }
                 #botao5{
+                    /* meio de baixo */
                     position: absolute;
-                    width: 68px;
-                    right: 230px;
-                    top: 100px;
+                    width: 53px;
+                    right: 90px;
+                    top: 80px;
                     border-radius: 50%;
-                    cursor: pointer;
+                    cursor: var(--cursor-boxe);
                 }
                 #botao6{
+                    /* esquerdo de cima */
                     position: absolute;
-                    width: 68px;
-                    right: 410px;
-                    top: -130px;
+                    width: 53px;
+                    right: 215px;
+                    top: -80px;
                     border-radius: 50%;
-                    cursor: pointer;
+                    cursor: var(--cursor-boxe);
                 }
                 #botao7{
+                    /* meio da direita */
                     position: absolute;
-                    width: 68px;
-                    right: 55px;
-                    top: -15px;
+                    width: 53px;
+                    right: -25px;
+                    top: 0px;
                     border-radius: 50%;
-                    cursor: pointer;
+                    cursor: var(--cursor-boxe);
                 }
                 #botao8{
+                    /* meio de cima */
                     position: absolute;
-                    width: 68px;
-                    right: 230px;
-                    top: -130px;
+                    width: 53px;
+                    right: 90px;
+                    top: -80px;
                     border-radius: 50%;
-                    cursor: pointer;
+                    cursor: var(--cursor-boxe);
                 }
             }
         }  
@@ -161,10 +192,11 @@ main{
         color: white;
         padding: 25px;
         border-radius: 15px;
-        cursor: pointer;
+        cursor: var(--cursor-boxe);
         margin-left: 10px;
+        font-family: Pixel02;
     }  
-}
+
 
 @keyframes piscaPisca {
     0%{background-color: blue; }
