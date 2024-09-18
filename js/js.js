@@ -107,7 +107,6 @@ function reiniciarAudio(){
     if (cont === 1) {
       setTimeout(() => fase1(), 1000);
       playAudio();
-      
     } else {
       Parar();
       reiniciarBonus();

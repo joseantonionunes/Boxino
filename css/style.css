@@ -38,8 +38,9 @@ main{
             margin-left: 200px;
             width: 135px; 
             font-size: 40px; 
+            font-weight: bolder;
             border: none; 
-            border-bottom: 2px solid rgb(0, 0, 0); 
+            border-bottom: 2px solid black;
             outline: none; 
             background: transparent; 
             font-family: Pixel02;
