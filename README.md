@@ -1,7 +1,7 @@
-# Em Construção
-
-## Feito em:
+# Feito em:
 
 ## Html
 ## Css
 ## Java Script
+## Node.js
+## SQLlite3
